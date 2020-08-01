@@ -18,7 +18,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+<<<<<<< HEAD
 DEBUG = os.environ.get('DEBUG_VALUE')
+=======
+DEBUG = True
+>>>>>>> c5a6e8fb3d3dc1668126d5ffb12f9eef34ee70ab
 
 ALLOWED_HOSTS = ['kodland.herokuapp.com']
 
