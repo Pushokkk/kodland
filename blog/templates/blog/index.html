@@ -22,15 +22,12 @@
                             <div class="post">
                                 <span>{{ post.published_date }}</span>
                                 <img src="{{ post.image.url }}" alt="Изображение поста {{ post_list.first.title }}">
-                                <h3>{{ post.title }}</h3>
+                                <h3>{{ post.title | safe | truncatechars_html:80 }}</h3>
                             </div>
                         </a>
-
                     {% endif %}
                 {% endfor %}
-
             </div>
-
         </div>
     </div>
 {% endblock %}
