@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+    <div class="main">
+        <div class="first-post">
+            <span>NEW</span>
+            <h2>
+                {{ post_list.first.title }}
+            </h2>
+            <img src="{{ post_list.first.image.url }}" alt="Изображение поста {{ post_list.first.title }}">
+            <div class="post-text">
+                {{ post_list.first.text | safe | truncatewords_html:25 }}
+            </div>
+            <a class="button" href="{% url 'blog:post' post_list.first.pk %}">Читать</a>
+        </div>
+        <div class="other-posts">
+            <h2>Другие статьи</h2>
+            <div class="grid">
+                {% for post in post_list %}
+                    {% if post != post_list.first %}
+                        <a href="{% url 'blog:post' post.pk %}">
+                            <div class="post">
+                                <span>{{ post.published_date }}</span>
+                                <img src="{{ post.image.url }}" alt="Изображение поста {{ post_list.first.title }}">
+                                <h3>{{ post.title | safe | truncatechars_html:80 }}</h3>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
