@@ -1,0 +1,73 @@
+{% extends 'wrapper.html' %}
+{% block head_block %}
+    <script src="https://cdn.tiny.cloud/1/1k58nek2gzzfgbdwzxkfejp9u8hapq3fpo3ijva31gupe7y5/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
+    <script>tinymce.init({
+        selector: '#id_text',
+        mode: "textareas",
+        plugins: "fullpage"
+    });</script>
+{% endblock %}
+{% block content %}
+    <div class="new-post">
+        <h1>Добавить статью</h1>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.non_field_errors }}
+            {% csrf_token %}
+            <div class="row">
+                {{ form.title.errors }}
+                {{ form.title }}
+                <input id="primary_submit" type="submit" onclick="tinyMCE.triggerSave();" value="Опубликовать">
+            </div>
+            <div class="row">
+                {{ form.text.errors }}
+                {{ form.text }}
+                <div class="upload">
+                    <span>Загрузить изображение</span>
+                    {{ form.image.errors }}
+                    {{ form.image }}
+                    <div id="image_preview" style="display: none;">
+                        <div id="close_button" onclick="change_elements('17px', '135px', '0');">×
+                        </div>
+                    </div>
+                    <label id="image_label" for="id_image">{{ form.image.label }}</label>
+                </div>
+            </div>
+            <input id="secondary_submit" type="submit" onclick="tinyMCE.triggerSave();" value="Опубликовать" style="display: none">
+        </form>
+        <script type="text/javascript">
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    let reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById('image_preview').style.backgroundImage = `url(${e.target.result})`;
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            document.getElementById('id_image').addEventListener("change", function () {
+                readURL(this);
+                change_elements('5px', 'auto', '260px');
+            });
+
+            function change_elements(padding_value, height_value, div_height_value) {
+                document.getElementById('image_preview').style.background = '';
+                document.getElementById('image_preview').style.height = div_height_value;
+                document.getElementsByClassName('upload')[0].style.height = height_value;
+                document.getElementsByClassName('upload')[0].style.padding = padding_value;
+                change_visibility('image_label');
+                change_visibility('image_preview');
+            }
+
+            function change_visibility(id) {
+                let el = document.getElementById(id);
+                if (el.style.display === 'none') {
+                    el.style.display = 'flex'
+                } else {
+                    el.style.display = 'none'
+                }
+            }
+        </script>
+    </div>
+{% endblock %}

@@ -1,0 +1,302 @@
+*
+  margin: 0
+  padding: 0
+  font-family: Circe Rounded, sans-serif
+  font-size: 16px
+  color: #010101
+
+  .button
+    text-decoration: none
+    background: #315AF2
+    border-radius: 6px
+    color: #FFFFFF
+
+  .button:hover, .button:active
+    background-color: rgba(49, 90, 242, 0.75)
+
+  .navbar
+    display: flex
+    align-items: center
+    height: 80px
+    padding: 0 90px 0 120px
+    border-bottom: 2px solid #CDCDCD
+
+    h1
+      font-size: 22px
+      line-height: 26px
+
+    .logo
+      width: 189px
+      height: 72px
+      background: url('../img/logo.png') no-repeat 50% 50%
+
+    a.button
+      font-size: 16px
+      line-height: 19px
+      padding: 6px 16px
+      margin-left: auto
+
+  .main
+    h2
+      font-family: Museo Cyrl, sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 32px
+      line-height: 38px
+      color: #315AF2
+
+    .first-post
+      display: block
+      border-bottom: 2px solid #CDCDCD
+      padding: 40px 120px
+      min-height: 500px
+      img
+        position: relative
+        margin-top: -100px
+        float: right
+        width: 464px
+        height: 422px
+      span
+        font-size: 16px
+        line-height: 20px
+        color: #E9399C
+
+      h2
+        font-family: Museo Cyrl, sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 44px
+        line-height: 56px
+        color: #315AF2
+        width: 672px
+        margin: 10px 0
+
+      .post-text
+        width: 391px
+        font-family: Circe Rounded
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 136%
+        margin: 10px 0 45px 0
+      .post-text > p
+        max-width: 100% !important
+
+      a
+        width: 150px
+        height: 58px
+        font-family: Museo Cyrl, sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 32px
+        line-height: 38px
+        padding: 10px
+
+    .other-posts
+      padding: 40px 120px
+
+      h2
+        margin: 20px 0 32px
+
+      .grid
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+
+        a
+          text-decoration: none
+          width: 335px
+          height: 300px
+          margin-bottom: 32px
+
+          .post
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            height: 100%
+            box-sizing: border-box
+            border: 2px solid #CDCDCD
+            border-radius: 3px
+            padding: 20px
+
+            span
+              font-family: Circe Rounded, sans-serif
+              font-size: 12px
+              line-height: 20px
+              color: #979797
+              align-self: flex-start
+
+            img
+              width: 217px
+              height: 112px
+              margin: 0 auto 35px
+
+            h3
+              font-family: Circe Rounded
+              font-size: 24px
+              line-height: 29px
+              text-align: center
+              letter-spacing: -0.416667px
+
+              color: #315AF2
+
+  .new-post
+    padding: 60px 120px
+    box-sizing: border-box
+
+    h1
+      font-family: Museo Cyrl, sans-serif
+      font-size: 45px
+      line-height: 52px
+      letter-spacing: -0.416667px
+      color: #315AF2
+      margin-bottom: 44px
+
+    form
+      .row
+        display: flex
+        align-items: center
+        margin-bottom: 37px
+
+        .upload
+          display: flex
+          flex-direction: column
+          align-items: center
+          align-self: flex-start
+          box-sizing: border-box
+          border: 2px solid #CDCDCD
+          border-radius: 3px
+          width: 300px
+          height: 135px
+          padding: 17px 18px
+          margin-left: 21px
+          top: 100px
+
+          span
+            font-family: Circe Rounded, sans-serif
+            font-weight: bold
+            font-size: 22px
+            line-height: 31px
+            text-align: center
+            color: #315AF2
+            margin-bottom: 11px
+          #image_preview
+            height: 0
+            width: 286px
+            background-repeat: no-repeat
+            background-position: 50% 50%
+            background-size: contain
+            display: flex
+            justify-content: flex-end
+            align-items: flex-start
+            #close_button
+              display: flex
+              justify-content: center
+              align-items: center
+              font-size: 22px
+              color: #FFFFFF
+              border-radius: 50%
+              height: 24px
+              width: 24px
+              background-color: #E5E5E5
+              margin: 20px 20px 0 0
+            #close_button:hover
+              cursor: pointer
+          #id_image
+            width: 0
+            height: 0
+            opacity: 0
+            overflow: hidden
+            position: absolute
+            z-index: -1
+
+          label[for="id_image"]
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 150px
+            height: 50px
+            float: right
+            background-color: #315AF2
+            border-radius: 3px
+            color: #FFFFFF
+            font-family: Museo Cyrl, sans-serif
+            font-style: normal
+            font-weight: bold
+            font-size: 18px
+            line-height: 22px
+
+          label[for="id_image"]:hover
+            cursor: pointer
+            background-color: rgba(49, 90, 242, 0.75)
+
+      #id_title
+        width: 70%
+        box-sizing: border-box
+        padding: 0 15px
+        margin-right: 21px
+        border: 2px solid #CDCDCD
+        border-radius: 3px
+        font-family: Circe Rounded, sans-serif
+        font-size: 24px
+        line-height: 52px
+        letter-spacing: -0.416667px
+        color: #315AF2
+        font-weight: bold
+
+      #id_title::placeholder
+        color: #C4C4C4
+
+      input[type=submit]
+        float: right
+        margin-right: auto
+        background: #E9399C
+        border: none
+        border-radius: 3px
+        font-family: Museo Cyrl, sans-serif
+        font-weight: bold
+        font-size: 18px
+        line-height: 22px
+        color: #FFFFFF
+        width: 159px
+        height: 50px
+
+      input[type=submit]:hover
+        cursor: pointer
+        background-color: rgba(233, 57, 156, 0.75)
+
+  .post-view
+    display: flex
+    width: 607px
+    flex-direction: column
+    margin: 0 auto
+    padding: 60px
+    h1
+      width: 400px
+      font-family: Museo Cyrl
+      font-style: normal
+      font-weight: bold
+      font-size: 32px
+      line-height: 41PX
+      letter-spacing: -0.416667px
+      color: #315AF2
+    img
+      margin: 24px 0
+
+
+.tox-statusbar
+  display: none !important
+
+.tox-notifications-container
+  display: none !important
+
+.tox-tinymce
+  height: 478px !important
+  width: 70% !important
+  box-sizing: border-box !important
+  border: 2px solid #CDCDCD !important
+  border-radius: 3px !important
+
+@import "media"

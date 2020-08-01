@@ -1,0 +1,321 @@
+@import "breakpoints"
+
+@include for-big-desktop
+  .navbar
+    a.button
+      padding: 10px 20px
+  .main
+    .first-post
+      max-width: 1799px
+      margin: 0 auto
+
+      h2
+        font-size: 50px
+        width: 800px
+
+    .other-posts
+      margin: 0 auto
+      max-width: 1799px
+
+      .grid
+        a
+          width: 450px
+          height: 350px
+
+          .post
+            img
+              margin-top: 20px
+              width: 260px
+              height: 150px
+
+@include for-desktop
+  .main
+    .first-post
+      padding: 40px 80px
+
+      h2
+        width: 60%
+        max-width: calc(100vw - 624px)
+
+    .other-posts
+      max-width: 1339px
+      margin: 0 auto
+      padding: 40px 80px
+  .new-post
+    padding: 60px 80px
+
+    form
+      .row
+        .upload
+          span
+            font-size: 20px
+
+@include for-tablet-landscape
+  .main
+    .first-post
+      padding: 40px 60px
+
+      h2
+        width: 70%
+        max-width: calc(100vw - 470px)
+
+      img
+        width: 350px
+        height: 250px
+
+    .other-posts
+      padding: 40px 40px
+
+      h2
+        text-align: center
+
+      .grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+
+        a
+          margin: 0 auto 32px
+  .new-post
+    form
+      .row
+        #id_title
+          font-size: 20px
+
+      .row:last-child
+        flex-direction: column
+        align-items: flex-start
+
+        .upload
+          margin: 30px 0
+
+@include for-tablet-portrait
+  .navbar
+    padding: 0 30px 0 0
+  .main
+    .first-post
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 40px 40px
+
+      span
+        align-self: flex-start
+
+      h2
+        text-align: center
+        font-size: 36px
+        width: 60%
+
+      img
+        max-width: 350px
+        max-height: 250px
+        float: unset
+        margin: 0 auto
+
+      .post-text
+        width: 350px
+        margin-bottom: 0
+
+      a
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 120px
+        height: 40px
+
+    .other-posts
+      padding: 40px 40px
+
+      h2
+        text-align: center
+        margin-top: 0
+
+      .grid
+        display: grid
+        grid-template-columns: 1fr 1fr
+
+        a
+          width: 250px
+          height: 250px
+          margin: 0 auto 32px
+
+          .post
+            img
+              width: 180px
+              height: 100px
+              margin-bottom: 10px
+
+            h3
+              font-size: 20px
+
+  .new-post
+    padding: 60px 30px
+
+    form
+      .row
+        #id_title
+          font-size: 20px
+
+        input[type=submit]
+          width: 120px
+          font-size: 16px
+
+      .row:last-child
+        flex-direction: column
+        align-items: flex-start
+
+        .upload
+          margin: 30px 0
+  .post-view
+    width: 100%
+    margin: 0
+    padding: 40px
+    box-sizing: border-box
+
+    h1
+      width: 100%
+      text-align: center
+
+    img
+      width: 60%
+      margin: 20px auto
+
+    .post_body
+      width: 100%
+
+    .post_body > *
+      max-width: 100% !important
+
+@include for-phone-only
+  .navbar
+    padding: 0 10px 0 0
+
+    .logo
+      background-size: contain
+      width: 100px
+      margin: 0 10px
+
+    a.button
+      width: 100px
+      font-size: 12px
+  .main
+    .first-post
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 20px 20px
+
+      span
+        align-self: flex-start
+
+      h2
+        text-align: center
+        font-size: 26px
+        width: 100%
+        line-height: 32px
+
+      img
+        max-width: 300px
+        max-height: 200px
+        float: unset
+        margin: 0 auto
+
+      .post-text
+        width: 300px
+        margin-bottom: 0
+
+      a
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100px
+        height: 20px
+        font-size: 22px
+
+    .other-posts
+      padding: 20px 20px
+
+      h2
+        text-align: center
+        margin-top: 0
+
+      .grid
+        display: grid
+        grid-template-columns: 1fr
+
+        a
+          width: 250px
+          height: 250px
+          margin: 0 auto 32px
+
+          .post
+            img
+              width: 180px
+              height: 100px
+              margin-bottom: 10px
+
+            h3
+              font-size: 20px
+
+  .new-post
+    padding: 60px 30px
+
+    h1
+      font-size: 28px
+      line-height: 32px
+      margin-bottom: 20px
+
+    form
+      #secondary_submit
+        display: block !important
+        float: unset
+        margin: 0 auto
+
+      .row
+        flex-direction: column
+        align-items: flex-start
+
+        #primary_submit
+          display: none !important
+
+        #id_title
+          width: 100%
+          font-size: 16px
+
+        input[type=submit]
+          width: 120px
+          font-size: 16px
+
+        .upload
+          width: 100%
+          margin: 30px 0
+
+          span
+            font-size: 16px
+          label[for=id_image]
+            font-size: 16px
+            width: 90px
+            height: 30px
+  .post-view
+    width: 100%
+    margin: 0
+    padding: 20px
+    box-sizing: border-box
+
+    h1
+      width: 100%
+      text-align: center
+      font-size: 26px
+
+    img
+      width: 70%
+      margin: 20px auto
+
+    .post_body
+      width: 100%
+
+    .post_body > *
+      max-width: 100% !important
+  .tox-tinymce
+    width: 100% !important
+    height: 300px !important
