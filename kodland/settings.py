@@ -14,11 +14,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'h57^j56@zd5osb3g5g*#=$ec&kanp6bs*z_14*l^w0#&9!abks'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kodland.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
