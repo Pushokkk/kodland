@@ -542,6 +542,7 @@
     width: 100px;
     height: 20px;
     font-size: 22px;
+    margin-top: 20px;
   }
   .main .other-posts {
     padding: 20px 20px;
@@ -559,13 +560,16 @@
     height: 250px;
     margin: 0 auto 32px;
   }
+  .main .other-posts .grid a .post {
+    overflow: hidden;
+  }
   .main .other-posts .grid a .post img {
     width: 180px;
     height: 100px;
     margin-bottom: 10px;
   }
   .main .other-posts .grid a .post h3 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 20px;
   }
 
