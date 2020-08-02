@@ -3,15 +3,17 @@
 {% block content %}
     <div class="main">
         <div class="first-post">
-            <span>NEW</span>
-            <h2>
-                {{ post_list.first.title }}
-            </h2>
-            <img src="{{ post_list.first.image.url }}" alt="Изображение поста {{ post_list.first.title }}">
-            <div class="post-text">
-                {{ post_list.first.text | safe | truncatewords_html:25 }}
-            </div>
-            <a class="button" href="{% url 'blog:post' post_list.first.pk %}">Читать</a>
+            {% if post_list %}
+                <span>NEW</span>
+                <h2>
+                    {{ post_list.first.title }}
+                </h2>
+                <img src="{{ post_list.first.image.url }}" alt="Изображение поста {{ post_list.first.title }}">
+                <div class="post-text">
+                    {{ post_list.first.text | safe | truncatewords_html:25 }}
+                </div>
+                <a class="button" href="{% url 'blog:post' post_list.first.pk %}">Читать</a>
+            {% endif %}
         </div>
         <div class="other-posts">
             <h2>Другие статьи</h2>
